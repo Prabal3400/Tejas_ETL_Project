@@ -1,0 +1,18 @@
+3 - Validation Checks
+
+For Duplicates:
+
+No duplicate Customer_Id exists in the staging table or when moving to country tables.
+Date Validations:
+
+Open_Date, Last_Consulted_Date, and DOB should be valid dates.
+Ensure Last_Consulted_Date is not greater than the current date.
+Active Customer Check:
+
+If Is_Active is 'N', consider not inserting into the country tables or handle according to business rules.
+Mandatory Fields Validation:
+
+All mandatory fields (Customer_Name, Customer_Id, Open_Date, etc.) are populated before processing.
+Age and Days Since Last Consulted Calculations:
+
+Validate that age and days since last consulted are computed correctly and are within logical bounds (e.g., age cannot be negative).
