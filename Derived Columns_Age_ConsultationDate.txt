@@ -1,0 +1,2 @@
+Age = YEAR(CURRENT_DATE) - YEAR(DOB); 
+Days_Last_Consulted_Date = DATEDIFF(CURRENT_DATE, Last_Consulted_Date);
