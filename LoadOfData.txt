@@ -1,0 +1,19 @@
+INSERT INTO Table_US (Customer_Name, Customer_Id, Open_Date, Last_Consulted_Date, Vaccination_Id, Dr_Name, State, Country, Post_Code, DOB, Is_Active, Age, Days_Since_Last_Consulted)
+SELECT 
+    Customer_Name,
+    Customer_Id,
+    Open_Date,
+    Last_Consulted_Date,
+    Vaccination_Id,
+    Dr_Name,
+    State,
+    Country,
+    Post_Code,
+    DOB,
+    Is_Active,
+    YEAR(CURRENT_DATE) - YEAR(DOB) AS Age,
+    DATEDIFF(CURRENT_DATE, Last_Consulted_Date) AS Days_Since_Last_Consulted
+FROM 
+    Staging_Customers
+WHERE 
+    Country = 'US';
